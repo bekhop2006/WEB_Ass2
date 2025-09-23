@@ -7,11 +7,11 @@ Our platform delivers fresh news across different categories: sports, technology
 This project was created for educational purposes and demonstrates basic HTML and CSS skills.  
 
 ## 📂 Project Structure
-project/
-│── index.html # Homepage
-│── styles/
+WEB_ASS2/
+├── index.html # Homepage
+├── styles/
 │ └── style.css # Styles
-│── html/
+├── html/
 │ ├── news.html # News
 │ ├── categories.html # Categories
 │ ├── about.html # About Us

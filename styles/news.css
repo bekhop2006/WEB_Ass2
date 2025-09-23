@@ -1,6 +1,7 @@
 /* styles/news.css */
 /* Styles for the news page */
 
+
 .news-articles {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

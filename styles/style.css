@@ -46,6 +46,14 @@ nav {
     letter-spacing: 1px;
 }
 
+#main-content {
+    background-color: #f9f9f9; /* Пример стиля для ID селектора */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
 nav ul {
     list-style: none;
     margin: 0;

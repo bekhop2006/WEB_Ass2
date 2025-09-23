@@ -40,6 +40,15 @@
     margin-bottom: 15px;
 }
 
+.circular-image {
+    border-radius: 50%;
+    width: 150px; /* Пример фиксированного размера для круглой картинки */
+    height: 150px;
+    object-fit: cover; /* Для сохранения пропорций изображения */
+    display: block;
+    margin: 0 auto 15px auto; /* Центрирование */
+}
+
 .news-article-item p {
     font-size: 1em;
     line-height: 1.6;

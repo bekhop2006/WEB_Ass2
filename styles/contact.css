@@ -1,0 +1,93 @@
+/* styles/contact.css */
+/* Styles for the contact page */
+
+.contact-info {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-info h2 {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.contact-info p strong {
+    color: #333;
+}
+
+.contact-form-section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-section h2 {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .submit-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    display: block;
+    width: 100%;
+}
+
+.contact-form .submit-button:hover {
+    background-color: #0056b3;
+}

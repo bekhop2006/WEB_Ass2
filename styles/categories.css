@@ -1,0 +1,50 @@
+/* styles/categories.css */
+/* Styles for the categories page */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.category-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+}
+
+.category-item h3 {
+    font-size: 1.6em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.category-item p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.category-item .view-category {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.category-item .view-category:hover {
+    background-color: #0056b3;
+}

@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Categories</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/categories.css">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <a href="../index.html" class="Our_logo">Vitality news</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand Our_logo" href="../index.html">Vitality News</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="categories.html">Categories</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-            <ul>
-                <li><a href="news.html">News</a></li>
-                <li><a href="categories.html">Categories</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
         </nav>
     </header>
 
-    <main>
-        <h1>News Categories</h1>
-        <p>News categories will be displayed here. Explore different topics below:</p>
+    <main class="container py-4">
+        <h1 class="mb-3">News Categories</h1>
+        <p class="mb-4">News categories will be displayed here. Explore different topics below:</p>
 
         <section class="gallery-grid">
             <figure class="gallery-item"><img src="../images/p1.svg" alt="Gallery 1"><figcaption>Matchday</figcaption></figure>
@@ -38,44 +44,81 @@
             <figure class="gallery-item"><img src="../images/p9.svg" alt="Gallery 9"><figcaption>Future</figcaption></figure>
         </section>
 
-        <section class="category-grid">
-            <div class="category-item">
-                <h3>World News</h3>
-                <p>Stay updated on global events and international affairs.</p>
-                <a href="#" class="view-category">View Articles</a>
+        <section class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">World News</h5>
+                        <p class="card-text">Stay updated on global events and international affairs.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">View Articles</a>
+                    </div>
+                </div>
             </div>
-            <div class="category-item">
-                <h3>Technology</h3>
-                <p>Discover the latest advancements and innovations in tech.</p>
-                <a href="#" class="view-category">View Articles</a>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Technology</h5>
+                        <p class="card-text">Discover the latest advancements and innovations in tech.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">View Articles</a>
+                    </div>
+                </div>
             </div>
-            <div class="category-item">
-                <h3>Sports</h3>
-                <p>Catch up on scores, highlights, and sports analysis.</p>
-                <a href="#" class="view-category">View Articles</a>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Sports</h5>
+                        <p class="card-text">Catch up on scores, highlights, and sports analysis.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">View Articles</a>
+                    </div>
+                </div>
             </div>
-            <div class="category-item">
-                <h3>Science</h3>
-                <p>Explore breakthroughs and discoveries in scientific research.</p>
-                <a href="#" class="view-category">View Articles</a>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Science</h5>
+                        <p class="card-text">Explore breakthroughs and discoveries in scientific research.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">View Articles</a>
+                    </div>
+                </div>
             </div>
-            <div class="category-item">
-                <h3>Business</h3>
-                <p>Read about market trends, economic news, and corporate insights.</p>
-                <a href="#" class="view-category">View Articles</a>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Business</h5>
+                        <p class="card-text">Read about market trends, economic news, and corporate insights.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">View Articles</a>
+                    </div>
+                </div>
             </div>
-            <div class="category-item">
-                <h3>Entertainment</h3>
-                <p>Get your daily dose of celebrity news, movies, and music.</p>
-                <a href="#" class="view-category">View Articles</a>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Entertainment</h5>
+                        <p class="card-text">Get your daily dose of celebrity news, movies, and music.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">View Articles</a>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- Additional content for categories -->
     </main>
 
-    <footer>
+    <footer class="mt-5">
         <p>&copy; 2025 News Website. All rights reserved.</p>
         <p>Team: Vitality | Members: Sariyev Maxot, Tanibergen Beknur | Group: SE-2406</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

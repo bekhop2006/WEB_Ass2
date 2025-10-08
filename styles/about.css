@@ -1,5 +1,4 @@
-/* styles/about.css */
-/* Styles for the about us page */
+
 
 .about-section {
     background-color: #fff;
@@ -67,4 +66,75 @@
     color: #666;
     margin-bottom: 5px;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .about-section h2 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+    }
+    
+    .about-section p {
+        font-size: 1em;
+        line-height: 1.6;
+    }
+    
+    .team-members {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .team-member-card {
+        padding: 15px;
+    }
+    
+    .team-member-card h3 {
+        font-size: 1.2em;
+    }
+    
+    .about-section ul li {
+        padding: 8px 12px;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-section {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .about-section h2 {
+        font-size: 1.4em;
+        margin-bottom: 12px;
+    }
+    
+    .about-section p {
+        font-size: 0.95em;
+        line-height: 1.5;
+    }
+    
+    .team-member-card {
+        padding: 12px;
+    }
+    
+    .team-member-card h3 {
+        font-size: 1.1em;
+    }
+    
+    .team-member-card p {
+        font-size: 0.9em;
+    }
+    
+    .about-section ul li {
+        padding: 6px 10px;
+        margin-bottom: 6px;
+        font-size: 0.9em;
+    }
 }

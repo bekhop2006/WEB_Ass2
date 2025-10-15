@@ -128,7 +128,7 @@
                 <div class="col-md-6 col-lg-4">
                     <article class="news-item h-100">
                         <h3>Sport News</h3>
-                        <p>Tickets for “Kairat” vs. “Real”: Kazakhstanis criticize the sales system...</p>
+                        <p>Tickets for "Kairat" vs. "Real": Kazakhstanis criticize the sales system...</p>
                         <a href="html/news.html" class="btn btn-outline-primary">Read More</a>
                     </article>
                 </div>
@@ -148,30 +148,44 @@
                 </div>
             </div>
         </section>
+
+        <!-- Interactive Features Section -->
+        <section class="mb-5 text-center">
+            <h2 class="mb-4">Interactive Features</h2>
+            <div class="row g-3 justify-content-center">
+                <div class="col-auto">
+                    <button id="open-popup" class="btn btn-success btn-lg">Subscribe to Newsletter</button>
+                </div>
+                <div class="col-auto">
+                    <button id="change-bg-color" class="btn btn-warning btn-lg">Change Background Color</button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="mt-5">
+        <div id="current-datetime" class="text-center mb-2"></div>
         <p>&copy; 2025 News Website. All rights reserved.</p>
         <p>Team: Vitality | Members: Sariyev Maxot, Tanibergen Beknur | Group: SE-2406</p>
     </footer>
+
+    <!-- Popup Subscription Form -->
+    <div id="subscription-popup" class="popup-overlay">
+        <div class="popup-content">
+            <button id="close-popup" class="close-btn">&times;</button>
+            <h3>Subscribe to Our Newsletter</h3>
+            <form id="popup-form">
+                <div class="mb-3">
+                    <label for="popup-email" class="form-label">Email Address</label>
+                    <input type="email" id="popup-email" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/background-changer.js"></script>
+    <script src="js/datetime.js"></script>
 </body>
 </html>
-
-<!-- Кнопка для открытия попапа -->
-<button id="open-popup" class="btn btn-success btn-lg mb-3">Subscribe to Newsletter</button>
-
-<!-- Попап форма -->
-<div id="subscription-popup" class="popup-overlay">
-    <div class="popup-content">
-        <button id="close-popup" class="close-btn">&times;</button>
-        <h3>Subscribe to Our Newsletter</h3>
-        <form id="popup-form">
-            <div class="mb-3">
-                <label for="popup-email" class="form-label">Email Address</label>
-                <input type="email" id="popup-email" class="form-control" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Subscribe</button>
-        </form>
-    </div>
-</div>

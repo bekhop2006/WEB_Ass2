@@ -1,38 +1,59 @@
+// Accordion Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const accordionItems = document.querySelectorAll('.accordion-item');
     
     accordionItems.forEach(item => {
         const header = item.querySelector('.accordion-header');
         const content = item.querySelector('.accordion-content');
+        const icon = item.querySelector('.accordion-icon');
         
-        // Скрываем контент по умолчанию
+        // Initially hide all content
         content.style.display = 'none';
-        content.style.maxHeight = '0';
-        content.style.overflow = 'hidden';
-        content.style.transition = 'max-height 0.3s ease-out';
         
         header.addEventListener('click', function() {
-            const isOpen = content.style.display === 'block';
+            const isActive = item.classList.contains('active');
             
-            // Закрываем все другие элементы
+            // Close all other accordion items
             accordionItems.forEach(otherItem => {
                 if (otherItem !== item) {
-                    const otherContent = otherItem.querySelector('.accordion-content');
-                    otherContent.style.display = 'none';
-                    otherContent.style.maxHeight = '0';
                     otherItem.classList.remove('active');
+                    otherItem.querySelector('.accordion-content').style.display = 'none';
+                    otherItem.querySelector('.accordion-icon').textContent = '+';
                 }
             });
             
-            // Переключаем текущий элемент
-            if (isOpen) {
-                content.style.display = 'none';
-                content.style.maxHeight = '0';
+            // Toggle current item
+            if (isActive) {
                 item.classList.remove('active');
+                content.style.display = 'none';
+                icon.textContent = '+';
             } else {
-                content.style.display = 'block';
-                content.style.maxHeight = content.scrollHeight + 'px';
                 item.classList.add('active');
+                content.style.display = 'block';
+                icon.textContent = '−';
+                
+                // Add smooth animation
+                content.style.opacity = '0';
+                content.style.transform = 'translateY(-10px)';
+                
+                setTimeout(() => {
+                    content.style.transition = 'all 0.3s ease';
+                    content.style.opacity = '1';
+                    content.style.transform = 'translateY(0)';
+                }, 10);
+            }
+        });
+        
+        // Add hover effects
+        header.addEventListener('mouseenter', function() {
+            if (!item.classList.contains('active')) {
+                header.style.backgroundColor = '#e9ecef';
+            }
+        });
+        
+        header.addEventListener('mouseleave', function() {
+            if (!item.classList.contains('active')) {
+                header.style.backgroundColor = '#f8f9fa';
             }
         });
     });

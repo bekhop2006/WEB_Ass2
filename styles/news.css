@@ -71,3 +71,109 @@
 
 .news-article-item .read-more:hover { background-color:#0b5ed7; transform: translateY(-2px); box-shadow:0 10px 20px rgba(13,110,253,0.35); }
 
+/* Image Gallery Styles */
+.gallery-thumbnail {
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.gallery-thumbnail:hover {
+    border-color: #007bff;
+}
+
+.gallery-display {
+    max-width: 100%;
+    max-height: 500px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.image-gallery-section {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+/* Animation keyframes for gallery */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { 
+        transform: translateY(0); 
+    }
+    40% { 
+        transform: translateY(-10px); 
+    }
+    60% { 
+        transform: translateY(-5px); 
+    }
+}
+
+/* Dark Theme Styles for News Page */
+.dark-theme .page-grid {
+    background-color: #1a1a1a !important;
+}
+
+.dark-theme .grid-header {
+    background: linear-gradient(135deg, #2d2d2d, #343a40) !important;
+    color: #ffffff !important;
+}
+
+.dark-theme .news-article-item {
+    background-color: #2d2d2d !important;
+    color: #ffffff !important;
+    border-left-color: #0d6efd !important;
+}
+
+.dark-theme .news-article-item h2 {
+    color: #0d6efd !important;
+}
+
+.dark-theme .news-meta {
+    color: #adb5bd !important;
+}
+
+.dark-theme .news-article-item p {
+    color: #e9ecef !important;
+}
+
+.dark-theme .news-article-item .read-more {
+    background-color: #0d6efd !important;
+    color: #ffffff !important;
+}
+
+.dark-theme .news-article-item .read-more:hover {
+    background-color: #0b5ed7 !important;
+}
+
+.dark-theme .gallery-thumbnail {
+    border-color: #555 !important;
+}
+
+.dark-theme .gallery-thumbnail:hover {
+    border-color: #0d6efd !important;
+}
+
+.dark-theme .gallery-display {
+    box-shadow: 0 8px 24px rgba(255,255,255,0.1) !important;
+}
+
+.dark-theme .image-gallery-section {
+    background-color: #2d2d2d !important;
+}
+
+.dark-theme .image-gallery-section h2 {
+    color: #ffffff !important;
+}
+
+.dark-theme .read-more-content {
+    background-color: #2d2d2d !important;
+    color: #e9ecef !important;
+}
+
+.dark-theme .read-more-content p {
+    color: #e9ecef !important;
+}
+

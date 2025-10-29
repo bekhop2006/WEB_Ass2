@@ -4,35 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/news.css">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <a href="../index.html" class="Our_logo">Vitality news</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg">
+            <div class="container">
+                <a class="navbar-brand Our_logo" href="../index.html">Vitality News</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="news.html">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                🌐 Language
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                                <li><button class="dropdown-item language-btn active" data-lang="en">English</button></li>
+                                <li><button class="dropdown-item language-btn" data-lang="ru">Русский</button></li>
+                                <li><button class="dropdown-item language-btn" data-lang="kz">Қазақша</button></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link btn btn-link" id="theme-toggle-navbar" style="color: rgba(255,255,255,.55); text-decoration: none;">🌙 Night Mode</button>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <ul>
-                <li><a href="news.html">News</a></li>
-                <li><a href="categories.html">Categories</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
         </nav>
     </header>
 
-    <main>
-        <h1>News Page</h1>
-        <p>All news will be displayed here. Below are some of our latest articles:</p>
+    <main class="page-grid container py-4">
+        <header class="grid-header">
+            <h1>News Page</h1>
+            <p>All news will be displayed here. Below are some of our latest articles:</p>
+        </header>
 
-        <section class="news-articles">
+        <section class="news-articles grid-main">
             <article class="news-article-item">
                 <h2>Tickets for “Kairat” vs. “Real”: Kazakhstanis criticize the sales system</h2>
                 <p class="news-meta">Published on September 22, 2025 by Sariyev Maxot</p>
-                <img src="../images/photo_523404.png.webp" alt="Tickets for “Kairat” vs. “Real”">
-                <p>Today, September 23, at exactly 5:00 p.m., the long-awaited ticket sales for the Champions League match between Almaty’s “Kairat” and Madrid’s “Real” officially began. Even before the system opened, it was expected that the interest would be enormous: tens of thousands of fans were preparing to join the virtual queue in hopes of securing the coveted tickets. However, the launch also drew considerable criticism. And, of course, it didn’t go without jokes, reports Tengri Life.</p>
-                <a href="#" class="read-more">Read Full Article</a>
+                <img src="../images/photo_523404.png.webp" alt="Tickets for "Kairat" vs. "Real"">
+                <p>Today, September 23, at exactly 5:00 p.m., the long-awaited ticket sales for the Champions League match between Almaty's "Kairat" and Madrid's "Real" officially began. Even before the system opened, it was expected that the interest would be enormous: tens of thousands of fans were preparing to join the virtual queue in hopes of securing the coveted tickets. However, the launch also drew considerable criticism. And, of course, it didn't go without jokes, reports Tengri Life.</p>
+                <div class="read-more-content" style="display: none;">
+                    <p>The ticket sales system, which was supposed to handle the massive demand, experienced technical difficulties from the very beginning. Many users reported being unable to access the website, while others complained about the confusing interface and long waiting times. Social media was flooded with memes and complaints about the system's performance.</p>
+                    <p>Despite the technical issues, thousands of tickets were sold within the first hour. The match, scheduled for October 15th at the Almaty Central Stadium, is expected to be one of the most attended football events in Kazakhstan's history.</p>
+                </div>
+                <button class="btn btn-primary read-more-btn" data-target="article1">Read More</button>
             </article>
 
             <article class="news-article-item">
@@ -40,23 +65,105 @@
                 <p class="news-meta">Published on September 23, 2025 by Beknur Tanibergen</p>
                 <img src="../images/photo_523360.jpg.webp" alt="Bakytzhan Malybayev">
                 <p>According to the Ministry of Internal Affairs, Malybayev submitted his resignation report and was relieved of his post by order of the Minister of Internal Affairs. It is noted that Bakytzhan Malybayev was appointed to the position in September 2024.</p>
-                <p>Bakytzhan Malybayev was born on July 23, 1969, in the village of Kyzyltas, Korday District, Zhambyl Region. He began his service in the internal affairs bodies in 1990. </p>
-                <a href="#" class="read-more">Read Full Article</a>
+                <div class="read-more-content" style="display: none;">
+                    <p>Bakytzhan Malybayev was born on July 23, 1969, in the village of Kyzyltas, Korday District, Zhambyl Region. He began his service in the internal affairs bodies in 1990. Throughout his career, he held various positions in law enforcement and was known for his dedication to public safety.</p>
+                    <p>The resignation comes as part of a broader restructuring within the Ministry of Internal Affairs. A new head of the Zhambyl Region Police Department is expected to be appointed within the next few weeks. The ministry has assured the public that all ongoing investigations and operations will continue without interruption.</p>
+                </div>
+                <button class="btn btn-primary read-more-btn" data-target="article2">Read More</button>
             </article>
             <article class="news-article-item">
                 <h2>Higgsfield: AI Model for Video Generation Raises $16M</h2>
                 <p class="news-meta">Published in September of this year by Tanibergen Beknur</p>
-                <img src="../images/images.png" alt="Higgsfield AI Product">
+                <img src="../images/images.png" alt="Higgsfield AI Product" class="circular-image">
                 <p>"Higgsfield is a generative artificial intelligence model that creates videos based on text queries. The startup has raised $16 million in investment from renowned Silicon Valley venture capital firms. It currently competes directly with products from major tech giants like Open AI and Google," said Zhaslan Madiyev in April of this year.</p>
-                <a href="#" class="read-more">Read Full Article</a>
+                <div class="read-more-content" style="display: none;">
+                    <p>The investment round was led by prominent venture capital firms including Sequoia Capital and Andreessen Horowitz. The funding will be used to accelerate product development and expand the team of AI researchers and engineers.</p>
+                    <p>Higgsfield's technology represents a significant breakthrough in video generation, allowing users to create high-quality videos from simple text descriptions. The company plans to launch its public beta version in the coming months, with a full commercial release expected by the end of the year.</p>
+                </div>
+                <button class="btn btn-primary read-more-btn" data-target="article3">Read More</button>
             </article>
         </section>
+        
+        <!-- Image Gallery Section -->
+        <section class="image-gallery-section mt-5">
+            <h2 class="text-center mb-4">Photo Gallery</h2>
+            <div class="row g-3">
+                <div class="col-md-3 col-sm-6">
+                    <img src="../images/p1.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 1" data-full="../images/p1.svg">
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <img src="../images/p2.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 2" data-full="../images/p2.svg">
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <img src="../images/p3.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 3" data-full="../images/p3.svg">
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <img src="../images/p4.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 4" data-full="../images/p4.svg">
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <img src="../images/p5.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 5" data-full="../images/p5.svg">
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <img src="../images/p6.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 6" data-full="../images/p6.svg">
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <img src="../images/p7.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 7" data-full="../images/p7.svg">
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <img src="../images/p8.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 8" data-full="../images/p8.svg">
+                </div>
+            </div>
+            
+            <!-- Large Image Display -->
+            <div class="text-center mt-4">
+                <img id="gallery-display" src="../images/p1.svg" class="img-fluid gallery-display" alt="Selected Image">
+                <p id="gallery-caption" class="mt-2 text-muted">Click on any thumbnail to view the full image</p>
+            </div>
+        </section>
+        
+        <div class="grid-footer"></div>
         <!-- Additional content for news -->
     </main>
 
-    <footer>
+    <!-- Subscribe Section -->
+    <section class="container mt-5 mb-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h3 class="card-title mb-3">Subscribe to Our Newsletter</h3>
+                <p class="text-muted mb-3">Stay updated with the latest news!</p>
+                <button id="open-popup-news" class="btn btn-success btn-lg">Subscribe Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup Subscription Form -->
+    <div id="subscription-popup" class="popup-overlay">
+        <div class="popup-content">
+            <button id="close-popup" class="close-btn">&times;</button>
+            <h3>Subscribe to Our Newsletter</h3>
+            <form id="popup-form">
+                <div class="mb-3">
+                    <label for="popup-email" class="form-label">Email Address</label>
+                    <input type="email" id="popup-email" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="mt-5">
+        <div id="current-datetime" class="text-center mb-2"></div>
+        <div class="text-center mb-2">
+            <button id="change-bg-color-footer" class="btn btn-sm btn-warning">Change Background Color</button>
+        </div>
         <p>&copy; 2025 News Website. All rights reserved.</p>
         <p>Team:Vitality | Members: Sariyev Maxot, Tanibergen Beknur | Group:SE-2406</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../js/popup.js"></script>
+    <script src="../js/datetime.js"></script>
+    <script src="../js/image-gallery.js"></script>
+    <script src="../js/read-more.js"></script>
+    <script src="../js/navbar-features.js"></script>
 </body>
 </html>

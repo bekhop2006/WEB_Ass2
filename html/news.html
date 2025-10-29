@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/news.css">
 </head>
 <body>
+    <div id="scroll-progress"><div class="bar"></div></div>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg">
             <div class="container">
@@ -18,10 +20,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="mainNavbar">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" href="news.html">News</a></li>
-                        <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="news.html" data-i18n="nav_news">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="categories.html" data-i18n="nav_categories">Categories</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav_about">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 🌐 Language
@@ -43,15 +45,27 @@
 
     <main class="page-grid container py-4">
         <header class="grid-header">
-            <h1>News Page</h1>
-            <p>All news will be displayed here. Below are some of our latest articles:</p>
+            <h1 data-i18n="news_page_title">News Page</h1>
+            <p data-i18n="news_page_desc">All news will be displayed here. Below are some of our latest articles:</p>
         </header>
+
+        <section class="mb-4">
+            <div class="row g-2 position-relative">
+                <div class="col-md-8">
+                    <input id="news-search" type="text" class="form-control form-control-lg" placeholder="Search articles..." data-i18n-placeholder="search_placeholder">
+                    <ul id="search-suggestions" class="list-group position-absolute w-100" style="z-index: 1000;"></ul>
+                </div>
+                <div class="col-md-4 text-md-end mt-2 mt-md-0">
+                    <button id="clear-search" class="btn btn-outline-secondary" data-i18n="clear_search">Clear</button>
+                </div>
+            </div>
+        </section>
 
         <section class="news-articles grid-main">
             <article class="news-article-item">
                 <h2>Tickets for “Kairat” vs. “Real”: Kazakhstanis criticize the sales system</h2>
                 <p class="news-meta">Published on September 22, 2025 by Sariyev Maxot</p>
-                <img src="../images/photo_523404.png.webp" alt="Tickets for "Kairat" vs. "Real"">
+                <img class="lazy" loading="lazy" data-src="../images/photo_523404.png.webp" src="../images/photo_523404.png.webp" alt="Tickets for &quot;Kairat&quot; vs. &quot;Real&quot;">
                 <p>Today, September 23, at exactly 5:00 p.m., the long-awaited ticket sales for the Champions League match between Almaty's "Kairat" and Madrid's "Real" officially began. Even before the system opened, it was expected that the interest would be enormous: tens of thousands of fans were preparing to join the virtual queue in hopes of securing the coveted tickets. However, the launch also drew considerable criticism. And, of course, it didn't go without jokes, reports Tengri Life.</p>
                 <div class="read-more-content" style="display: none;">
                     <p>The ticket sales system, which was supposed to handle the massive demand, experienced technical difficulties from the very beginning. Many users reported being unable to access the website, while others complained about the confusing interface and long waiting times. Social media was flooded with memes and complaints about the system's performance.</p>
@@ -63,7 +77,7 @@
             <article class="news-article-item">
                 <h2>Head of Zhambyl Region Police Department Bakytzhan Malybayev Resigns</h2>
                 <p class="news-meta">Published on September 23, 2025 by Beknur Tanibergen</p>
-                <img src="../images/photo_523360.jpg.webp" alt="Bakytzhan Malybayev">
+                <img class="lazy" loading="lazy" data-src="../images/photo_523360.jpg.webp" src="../images/photo_523360.jpg.webp" alt="Bakytzhan Malybayev">
                 <p>According to the Ministry of Internal Affairs, Malybayev submitted his resignation report and was relieved of his post by order of the Minister of Internal Affairs. It is noted that Bakytzhan Malybayev was appointed to the position in September 2024.</p>
                 <div class="read-more-content" style="display: none;">
                     <p>Bakytzhan Malybayev was born on July 23, 1969, in the village of Kyzyltas, Korday District, Zhambyl Region. He began his service in the internal affairs bodies in 1990. Throughout his career, he held various positions in law enforcement and was known for his dedication to public safety.</p>
@@ -74,7 +88,7 @@
             <article class="news-article-item">
                 <h2>Higgsfield: AI Model for Video Generation Raises $16M</h2>
                 <p class="news-meta">Published in September of this year by Tanibergen Beknur</p>
-                <img src="../images/images.png" alt="Higgsfield AI Product" class="circular-image">
+                <img class="lazy circular-image" loading="lazy" data-src="../images/images.png" src="../images/images.png" alt="Higgsfield AI Product">
                 <p>"Higgsfield is a generative artificial intelligence model that creates videos based on text queries. The startup has raised $16 million in investment from renowned Silicon Valley venture capital firms. It currently competes directly with products from major tech giants like Open AI and Google," said Zhaslan Madiyev in April of this year.</p>
                 <div class="read-more-content" style="display: none;">
                     <p>The investment round was led by prominent venture capital firms including Sequoia Capital and Andreessen Horowitz. The funding will be used to accelerate product development and expand the team of AI researchers and engineers.</p>
@@ -89,28 +103,28 @@
             <h2 class="text-center mb-4">Photo Gallery</h2>
             <div class="row g-3">
                 <div class="col-md-3 col-sm-6">
-                    <img src="../images/p1.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 1" data-full="../images/p1.svg">
+                    <img loading="lazy" class="img-fluid gallery-thumbnail lazy" data-src="../images/p1.svg" src="../images/p1.svg" alt="Gallery Image 1" data-full="../images/p1.svg">
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <img src="../images/p2.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 2" data-full="../images/p2.svg">
+                    <img loading="lazy" class="img-fluid gallery-thumbnail lazy" data-src="../images/p2.svg" src="../images/p2.svg" alt="Gallery Image 2" data-full="../images/p2.svg">
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <img src="../images/p3.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 3" data-full="../images/p3.svg">
+                    <img loading="lazy" class="img-fluid gallery-thumbnail lazy" data-src="../images/p3.svg" src="../images/p3.svg" alt="Gallery Image 3" data-full="../images/p3.svg">
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <img src="../images/p4.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 4" data-full="../images/p4.svg">
+                    <img loading="lazy" class="img-fluid gallery-thumbnail lazy" data-src="../images/p4.svg" src="../images/p4.svg" alt="Gallery Image 4" data-full="../images/p4.svg">
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <img src="../images/p5.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 5" data-full="../images/p5.svg">
+                    <img loading="lazy" class="img-fluid gallery-thumbnail lazy" data-src="../images/p5.svg" src="../images/p5.svg" alt="Gallery Image 5" data-full="../images/p5.svg">
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <img src="../images/p6.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 6" data-full="../images/p6.svg">
+                    <img loading="lazy" class="img-fluid gallery-thumbnail lazy" data-src="../images/p6.svg" src="../images/p6.svg" alt="Gallery Image 6" data-full="../images/p6.svg">
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <img src="../images/p7.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 7" data-full="../images/p7.svg">
+                    <img loading="lazy" class="img-fluid gallery-thumbnail lazy" data-src="../images/p7.svg" src="../images/p7.svg" alt="Gallery Image 7" data-full="../images/p7.svg">
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <img src="../images/p8.svg" class="img-fluid gallery-thumbnail" alt="Gallery Image 8" data-full="../images/p8.svg">
+                    <img loading="lazy" class="img-fluid gallery-thumbnail lazy" data-src="../images/p8.svg" src="../images/p8.svg" alt="Gallery Image 8" data-full="../images/p8.svg">
                 </div>
             </div>
             
@@ -129,9 +143,9 @@
     <section class="container mt-5 mb-4">
         <div class="card">
             <div class="card-body text-center">
-                <h3 class="card-title mb-3">Subscribe to Our Newsletter</h3>
-                <p class="text-muted mb-3">Stay updated with the latest news!</p>
-                <button id="open-popup-news" class="btn btn-success btn-lg">Subscribe Now</button>
+                <h3 class="card-title mb-3" data-i18n="subscribe_title">Subscribe to Our Newsletter</h3>
+                <p class="text-muted mb-3" data-i18n="hero_sub">Stay informed with the latest events.</p>
+                <button id="open-popup-news" class="btn btn-success btn-lg" data-i18n="subscribe_now">Subscribe Now</button>
             </div>
         </div>
     </section>
@@ -140,30 +154,31 @@
     <div id="subscription-popup" class="popup-overlay">
         <div class="popup-content">
             <button id="close-popup" class="close-btn">&times;</button>
-            <h3>Subscribe to Our Newsletter</h3>
+            <h3 data-i18n="subscribe_title">Subscribe to Our Newsletter</h3>
             <form id="popup-form">
                 <div class="mb-3">
-                    <label for="popup-email" class="form-label">Email Address</label>
+                    <label for="popup-email" class="form-label" data-i18n="subscribe_email">Email Address</label>
                     <input type="email" id="popup-email" class="form-control" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Subscribe</button>
+                <button type="submit" class="btn btn-primary" data-i18n="subscribe_submit">Subscribe</button>
             </form>
         </div>
     </div>
 
     <footer class="mt-5">
         <div id="current-datetime" class="text-center mb-2"></div>
-        <div class="text-center mb-2">
-            <button id="change-bg-color-footer" class="btn btn-sm btn-warning">Change Background Color</button>
-        </div>
-        <p>&copy; 2025 News Website. All rights reserved.</p>
-        <p>Team:Vitality | Members: Sariyev Maxot, Tanibergen Beknur | Group:SE-2406</p>
+        
+        <p>&copy; 2025 News Website. <span data-i18n="footer_rights">All rights reserved.</span></p>
+        <p data-i18n="footer_team">Team:Vitality | Members: Sariyev Maxot, Tanibergen Beknur | Group:SE-2406</p>
     </footer>
+    <div id="toast-container"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="../js/popup.js"></script>
     <script src="../js/datetime.js"></script>
     <script src="../js/image-gallery.js"></script>
     <script src="../js/read-more.js"></script>
     <script src="../js/navbar-features.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/jquery-features.js"></script>
 </body>
 </html>

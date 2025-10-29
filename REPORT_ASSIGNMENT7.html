@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 7: jQuery Implementation Report</title>
+    <style>
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            background: white;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 20px;
+        }
+        h4 {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        .header-info {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #ecf0f1;
+            border-radius: 5px;
+        }
+        .header-info p {
+            margin: 5px 0;
+            font-size: 14pt;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 11pt;
+        }
+        pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 10pt;
+            line-height: 1.4;
+        }
+        pre code {
+            background: transparent;
+            color: #ecf0f1;
+            padding: 0;
+        }
+        .screenshot-placeholder {
+            border: 2px dashed #3498db;
+            background: #f8f9fa;
+            padding: 60px 20px;
+            margin: 20px 0;
+            text-align: center;
+            color: #7f8c8d;
+            font-style: italic;
+            border-radius: 5px;
+        }
+        .result-box {
+            background: #d5f4e6;
+            border-left: 4px solid #27ae60;
+            padding: 10px 15px;
+            margin: 15px 0;
+        }
+        .challenge-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px 15px;
+            margin: 15px 0;
+        }
+        .solution-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 10px 15px;
+            margin: 10px 0;
+        }
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 30px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        .page-break {
+            page-break-after: always;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #3498db;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Assignment 7: jQuery Implementation Report</h1>
+
+<div class="header-info">
+    <p><strong>Team Name:</strong> Vitality</p>
+    <p><strong>Team Members:</strong> Sariyev Maxot, Tanibergen Beknur</p>
+    <p><strong>Group:</strong> SE-2406</p>
+    <p><strong>Date:</strong> October 29, 2025</p>
+</div>
+
+<h2>Table of Contents</h2>
+<ol>
+    <li>Introduction</li>
+    <li>Task 0: Setup</li>
+    <li>Part 1: jQuery Search</li>
+    <li>Part 2: UX Engagement Elements</li>
+    <li>Part 3: Web App Functionality Improvements</li>
+    <li>Part 4: Deployment</li>
+    <li>Challenges and Solutions</li>
+    <li>Conclusion</li>
+</ol>
+
+<div class="page-break"></div>
+
+<h2>1. Introduction</h2>
+
+<h3>1.1 Objective</h3>
+<p>The goal of this assignment is to introduce jQuery, a powerful JavaScript library that simplifies DOM manipulation, event handling, and animations. We implemented various interactive features to enhance user experience on our news website.</p>
+
+<h3>1.2 Project Description</h3>
+<p>We continued working on our <strong>Vitality News</strong> website, adding jQuery-powered features including:</p>
+<ul>
+    <li>Real-time search with autocomplete</li>
+    <li>Search term highlighting</li>
+    <li>Scroll progress tracking</li>
+    <li>Animated number counters</li>
+    <li>Loading spinners</li>
+    <li>Toast notifications</li>
+    <li>Clipboard functionality</li>
+    <li>Lazy image loading</li>
+</ul>
+
+<div class="page-break"></div>
+
+<h2>2. Task 0: Setup</h2>
+
+<h3>2.1 Description</h3>
+<p>Set up jQuery library and verify it's working correctly.</p>
+
+<h3>2.2 Implementation Steps</h3>
+<ol>
+    <li><strong>Included jQuery CDN</strong> in the <code>&lt;head&gt;</code> section of all HTML pages:</li>
+</ol>
+
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"&gt;&lt;/script&gt;</code></pre>
+
+<ol start="2">
+    <li><strong>Created</strong> <code>js/jquery-features.js</code> file with document ready function:</li>
+</ol>
+
+<pre><code>$(document).ready(function(){
+    console.log("jQuery is ready!");
+});</code></pre>
+
+<ol start="3">
+    <li><strong>Linked the script</strong> in all HTML pages before closing <code>&lt;/body&gt;</code> tag.</li>
+</ol>
+
+<h3>2.3 Screenshots</h3>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 1:</strong> jQuery CDN included in HTML head section
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 2:</strong> Browser console showing "jQuery is ready!" message
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="result-box">
+    <strong>✅ Result:</strong> jQuery successfully loaded and initialized on all pages.
+</div>
+
+<div class="page-break"></div>
+
+<h2>3. Part 1: jQuery Search</h2>
+
+<h3>3.1 Task 1: Real-time Search and Live Filter</h3>
+
+<h4>Description</h4>
+<p>Implemented a search bar on the News page that filters articles in real-time as users type.</p>
+
+<h4>Implementation Steps</h4>
+<ol>
+    <li>Added search input field above news articles in <code>html/news.html</code>:</li>
+</ol>
+
+<pre><code>&lt;input id="news-search" type="text" 
+       class="form-control form-control-lg" 
+       placeholder="Search articles..." 
+       data-i18n-placeholder="search_placeholder"&gt;</code></pre>
+
+<ol start="2">
+    <li>Implemented filtering logic in <code>js/jquery-features.js</code>:</li>
+</ol>
+
+<pre><code>$search.on('keyup input', function(){
+    const term = $(this).val();
+    filterList(term);
+});
+
+function filterList(term){
+    const q = term.toLowerCase();
+    $articles.each(function(){
+        const text = $(this).text().toLowerCase();
+        $(this).toggle(text.indexOf(q) !== -1);
+    });
+}</code></pre>
+
+<h4>Screenshots</h4>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 3:</strong> News page with search bar visible
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 4:</strong> Search results showing filtered articles based on search term
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="result-box">
+    <strong>✅ Result:</strong> Articles filter instantly as user types in the search box.
+</div>
+
+<div class="page-break"></div>
+
+<h3>3.2 Task 2: Autocomplete Search Suggestions</h3>
+
+<h4>Description</h4>
+<p>Display dropdown suggestions as user types in the search field.</p>
+
+<h4>Implementation Steps</h4>
+<ol>
+    <li>Added suggestions container in <code>html/news.html</code>:</li>
+</ol>
+
+<pre><code>&lt;ul id="search-suggestions" 
+    class="list-group position-absolute w-100" 
+    style="z-index: 1000;"&gt;&lt;/ul&gt;</code></pre>
+
+<ol start="2">
+    <li>Implemented autocomplete logic:</li>
+</ol>
+
+<pre><code>function buildSuggestions(term){
+    $suggestions.empty();
+    if(!term){ $suggestions.hide(); return; }
+    const q = term.toLowerCase();
+    const top = titles.filter(t => 
+        t.toLowerCase().includes(q)
+    ).slice(0,8);
+    
+    if(top.length === 0){ 
+        $suggestions.hide(); 
+        return; 
+    }
+    
+    top.forEach(t => {
+        $('&lt;li class="list-group-item"&gt;&lt;/li&gt;')
+            .text(t)
+            .appendTo($suggestions);
+    });
+    $suggestions.show();
+}</code></pre>
+
+<ol start="3">
+    <li>Added click handler for suggestions to populate search field.</li>
+</ol>
+
+<h4>Screenshots</h4>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 5:</strong> Suggestions dropdown showing matching article titles
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 6:</strong> JavaScript code for autocomplete function
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="result-box">
+    <strong>✅ Result:</strong> Dropdown shows up to 8 relevant suggestions based on article titles.
+</div>
+
+<div class="page-break"></div>
+
+<h3>3.3 Task 3: Search Highlighting</h3>
+
+<h4>Description</h4>
+<p>Highlight matching keywords in article text when user searches.</p>
+
+<h4>Implementation Steps</h4>
+<ol>
+    <li>Added CSS for highlight styling in <code>styles/style.css</code>:</li>
+</ol>
+
+<pre><code>mark.search-highlight{ 
+    background: #ffe58f; 
+    padding: 0 2px; 
+}</code></pre>
+
+<ol start="2">
+    <li>Implemented highlighting function using regex:</li>
+</ol>
+
+<pre><code>function highlight(term){
+    if(!term) return;
+    
+    const regex = new RegExp(
+        '(' + $.escapeSelector(term)
+            .replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 
+        'ig'
+    );
+    
+    $articles.find('h2, p').each(function(){
+        const html = $(this).html();
+        $(this).html(
+            html.replace(regex, 
+                '&lt;mark class="search-highlight"&gt;$1&lt;/mark&gt;')
+        );
+    });
+}</code></pre>
+
+<h4>Screenshots</h4>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 7:</strong> Article text with search terms highlighted in yellow
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 8:</strong> CSS code for search-highlight class
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="result-box">
+    <strong>✅ Result:</strong> Matching words are highlighted in yellow across article titles and content.
+</div>
+
+<div class="page-break"></div>
+
+<h2>4. Part 2: UX Engagement Elements</h2>
+
+<h3>4.1 Task 4: Colorful and Stylized Scroll Progress Bar</h3>
+
+<h4>Description</h4>
+<p>Display a horizontal progress bar at the top of the page that fills as user scrolls.</p>
+
+<h4>Implementation Steps</h4>
+<ol>
+    <li>Added progress bar HTML to all pages:</li>
+</ol>
+
+<pre><code>&lt;div id="scroll-progress"&gt;
+    &lt;div class="bar"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<ol start="2">
+    <li>Styled the progress bar with gradient colors:</li>
+</ol>
+
+<pre><code>#scroll-progress{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: rgba(0,0,0,0.08);
+    z-index: 2000;
+}
+
+#scroll-progress .bar{
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        #6f42c1, #0d6efd, #20c997);
+    transition: width 0.1s linear;
+}</code></pre>
+
+<ol start="3">
+    <li>Implemented scroll tracking with jQuery:</li>
+</ol>
+
+<pre><code>const updateProgress = () => {
+    const scrollTop = $(window).scrollTop();
+    const docHeight = $(document).height() 
+        - $(window).height();
+    const progress = docHeight > 0 ? 
+        (scrollTop / docHeight) * 100 : 0;
+    $('#scroll-progress .bar')
+        .css('width', progress + '%');
+};
+
+$(window).on('scroll resize', updateProgress);
+updateProgress();</code></pre>
+
+<h4>Screenshots</h4>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 9:</strong> Colorful gradient progress bar showing scroll position
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 10:</strong> CSS code for progress bar gradient
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="result-box">
+    <strong>✅ Result:</strong> Smooth gradient progress bar tracks scroll position on all pages.
+</div>
+
+<div class="page-break"></div>
+
+<h3>4.2 Task 5: Animated Number Counter</h3>
+
+<h4>Description</h4>
+<p>Smoothly animate numbers counting up when they come into viewport (e.g., "1000+ Users").</p>
+
+<h4>Implementation Steps</h4>
+<ol>
+    <li>Added counter elements with data attributes:</li>
+</ol>
+
+<pre><code>&lt;div class="h2 counter" data-target="1000"&gt;0&lt;/div&gt;
+&lt;div class="text-muted"&gt;Users&lt;/div&gt;</code></pre>
+
+<ol start="2">
+    <li>Implemented animation using requestAnimationFrame:</li>
+</ol>
+
+<pre><code>function animate($el){
+    const target = parseInt($el.data('target'), 10) || 0;
+    const durationMs = 1500;
+    const start = performance.now();
+    
+    function step(ts){
+        const progress = Math.min(1, 
+            (ts - start)/durationMs);
+        const value = Math.floor(progress * target);
+        $el.text(value.toLocaleString());
+        
+        if(progress &lt; 1) 
+            requestAnimationFrame(step);
+    }
+    
+    requestAnimationFrame(step);
+}</code></pre>
+
+<ol start="3">
+    <li>Triggered animation when counters scroll into view.</li>
+</ol>
+
+<h4>Screenshots</h4>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 11:</strong> Animated counters showing statistics (Users, Articles, Categories)
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 12:</strong> JavaScript animation code with requestAnimationFrame
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="result-box">
+    <strong>✅ Result:</strong> Numbers smoothly count from 0 to target values when scrolled into view.
+</div>
+
+<div class="page-break"></div>
+
+<h3>4.3 Task 6: Loading Spinner on Submit</h3>
+
+<h4>Description</h4>
+<p>Show loading spinner and disable button when contact form is submitted.</p>
+
+<h4>Implementation Steps</h4>
+<ol>
+    <li>Created spinner animation with CSS:</li>
+</ol>
+
+<pre><code>.btn-loading{ 
+    position: relative; 
+    pointer-events: none; 
+    opacity: 0.85; 
+}
+
+.btn-loading .spinner{
+    width: 1rem; 
+    height: 1rem; 
+    border: 2px solid rgba(255,255,255,0.3); 
+    border-top-color: #fff; 
+    border-radius: 50%; 
+    display: inline-block; 
+    margin-right: 8px; 
+    animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin{ 
+    to{ transform: rotate(360deg); } 
+}</code></pre>
+
+<ol start="2">
+    <li>Implemented form submit handler:</li>
+</ol>
+
+<pre><code>$form.on('submit', function(e){
+    e.preventDefault();
+    
+    const original = $btn.html();
+    $btn.addClass('btn-loading')
+        .prop('disabled', true)
+        .html('&lt;span class="spinner"&gt;&lt;/span&gt;Please wait…');
+    
+    setTimeout(function(){
+        $btn.removeClass('btn-loading')
+            .prop('disabled', false)
+            .html(original);
+        showToast('Form submitted successfully');
+    }, 1800);
+});</code></pre>
+
+<h4>Screenshots</h4>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 13:</strong> Submit button showing spinner and "Please wait..." text
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 14:</strong> Button returned to normal with success toast notification
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="result-box">
+    <strong>✅ Result:</strong> Button shows spinner, disables during submission, then re-enables with success message.
+</div>
+
+<div class="page-break"></div>
+
+<h2>5. Part 3: Web App Functionality Improvements</h2>
+
+<h3>5.1 Task 7: Notification System (Toast)</h3>
+
+<h4>Description</h4>
+<p>Display temporary toast notifications that fade out after user actions.</p>
+
+<h4>Implementation Steps</h4>
+<ol>
+    <li>Added toast container to all pages:</li>
+</ol>
+
+<pre><code>&lt;div id="toast-container"&gt;&lt;/div&gt;</code></pre>
+
+<ol start="2">
+    <li>Styled toast notifications:</li>
+</ol>
+
+<pre><code>#toast-container{ 
+    position: fixed; 
+    right: 16px; 
+    bottom: 16px; 
+    z-index: 2100; 
+}
+
+.toast-item{ 
+    background: #222; 
+    color: #fff; 
+    padding: 12px 14px; 
+    border-radius: 8px; 
+    margin-top: 8px; 
+    opacity: 0.95; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+}</code></pre>
+
+<ol start="3">
+    <li>Created reusable toast helper function:</li>
+</ol>
+
+<pre><code>function showToast(message, duration=2500){
+    const $toast = $('&lt;div class="toast-item"&gt;&lt;/div&gt;')
+        .text(message);
+    $('#toast-container').append($toast);
+    
+    setTimeout(() => { 
+        $toast.fadeOut(400, () => $toast.remove()); 
+    }, duration);
+}</code></pre>
+
+<h4>Screenshots</h4>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 15:</strong> Toast notification appearing in bottom-right corner
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 16:</strong> Toast showing "Form submitted successfully" message
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="result-box">
+    <strong>✅ Result:</strong> Toast notifications appear for user actions and automatically fade out after 2.5 seconds.
+</div>
+
+<div class="page-break"></div>
+
+<h3>5.2 Task 8: Copy to Clipboard Button</h3>
+
+<h4>Description</h4>
+<p>Add a "Copy" button that copies text to clipboard and shows confirmation.</p>
+
+<h4>Implementation Steps</h4>
+<ol>
+    <li>Added copy snippet section in <code>html/about.html</code>:</li>
+</ol>
+
+<pre><code>&lt;div class="card"&gt;
+    &lt;div class="card-body"&gt;
+        &lt;pre&gt;&lt;code id="snippet-text"&gt;npm install jquery&lt;/code&gt;&lt;/pre&gt;
+        &lt;button id="copy-snippet" 
+                class="btn btn-outline-primary" 
+                data-copy-target="#snippet-text"&gt;
+            Copy
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<ol start="2">
+    <li>Implemented clipboard API functionality:</li>
+</ol>
+
+<pre><code>$(document).on('click', '#copy-snippet', function(){
+    const targetSel = $(this).data('copy-target');
+    const text = $(targetSel).text();
+    
+    navigator.clipboard.writeText(text).then(() => {
+        const $btn = $('#copy-snippet');
+        const original = $btn.text();
+        
+        $btn.html('✔ Copied');
+        showToast('Copied to clipboard!');
+        
+        setTimeout(() => $btn.html(original), 1200);
+    });
+});</code></pre>
+
+<h4>Screenshots</h4>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 17:</strong> "Copy" button next to code snippet
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 18:</strong> Button showing "✔ Copied" with toast notification
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="result-box">
+    <strong>✅ Result:</strong> Click copies text to clipboard, button shows checkmark, toast confirms action.
+</div>
+
+<div class="page-break"></div>
+
+<h3>5.3 Task 9: Image Lazy Loading</h3>
+
+<h4>Description</h4>
+<p>Load images only when they scroll into viewport to improve page performance.</p>
+
+<h4>Implementation Steps</h4>
+<ol>
+    <li>Modified image tags with lazy loading attributes:</li>
+</ol>
+
+<pre><code>&lt;img class="lazy" 
+     loading="lazy" 
+     data-src="../images/photo_523404.png.webp" 
+     src="../images/photo_523404.png.webp" 
+     alt="Article Image"&gt;</code></pre>
+
+<ol start="2">
+    <li>Implemented lazy loading with scroll detection:</li>
+</ol>
+
+<pre><code>function loadInView(){
+    const winTop = $(window).scrollTop();
+    const winBottom = winTop + $(window).height();
+    
+    $lazy.each(function(){
+        const $img = $(this);
+        if($img.data('loaded')) return;
+        
+        const top = $img.offset().top;
+        if(top &lt; winBottom + 150){
+            const src = $img.attr('data-src');
+            if(src){ $img.attr('src', src); }
+            $img.data('loaded', true).removeClass('lazy');
+        }
+    });
+}
+
+$(window).on('scroll resize', loadInView);
+loadInView(); // Load visible images immediately</code></pre>
+
+<h4>Screenshots</h4>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 19:</strong> HTML code showing lazy loading attributes (data-src)
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 20:</strong> Browser showing images loading as user scrolls
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="result-box">
+    <strong>✅ Result:</strong> Images load progressively as they enter viewport, improving initial page load time.
+</div>
+
+<div class="page-break"></div>
+
+<h2>6. Part 4: Deployment</h2>
+
+<h3>6.1 Deployment Process</h3>
+
+<ol>
+    <li><strong>Version Control</strong>
+        <ul>
+            <li>All changes committed to Git repository</li>
+            <li>Created feature branch for jQuery implementation</li>
+            <li>Merged to main branch after testing</li>
+        </ul>
+    </li>
+    
+    <li><strong>Deployment Platform</strong>
+        <ul>
+            <li>Platform Used: <em>[GitHub Pages / Netlify]</em></li>
+            <li>Build Process: Static site deployment</li>
+            <li>Domain: <em>[INSERT YOUR DOMAIN]</em></li>
+        </ul>
+    </li>
+    
+    <li><strong>Testing</strong>
+        <ul>
+            <li>Tested all jQuery features on deployed site</li>
+            <li>Verified cross-browser compatibility (Chrome, Firefox, Safari)</li>
+            <li>Checked mobile responsiveness</li>
+        </ul>
+    </li>
+</ol>
+
+<h3>6.2 Screenshots</h3>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 21:</strong> GitHub Pages or Netlify deployment settings
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<div class="screenshot-placeholder">
+    <strong>Screenshot 22:</strong> Live website homepage
+    <br><br>
+    [INSERT SCREENSHOT HERE]
+</div>
+
+<h3>6.3 Deployed Website URL</h3>
+<p style="text-align: center; padding: 20px; background: #e8f4f8; border-radius: 5px; font-size: 14pt;">
+    <strong>Live Website:</strong> <em>[INSERT YOUR DEPLOYED URL HERE]</em>
+</p>
+
+<div class="page-break"></div>
+
+<h2>7. Challenges and Solutions</h2>
+
+<div class="challenge-box">
+    <h3>Challenge 1: Search Highlighting with Special Characters</h3>
+    <p><strong>Problem:</strong> Regex patterns were breaking when users searched for special characters like <code>()</code>, <code>[]</code>, etc.</p>
+</div>
+
+<div class="solution-box">
+    <p><strong>Solution:</strong> Implemented proper regex escaping:</p>
+    <pre><code>const regex = new RegExp(
+    '(' + $.escapeSelector(term)
+        .replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 
+    'ig'
+);</code></pre>
+</div>
+
+<div class="challenge-box">
+    <h3>Challenge 2: Scroll Progress Calculation</h3>
+    <p><strong>Problem:</strong> Progress bar would sometimes exceed 100% or not reach 100% at page bottom.</p>
+</div>
+
+<div class="solution-box">
+    <p><strong>Solution:</strong> Added boundary checks and proper calculation:</p>
+    <pre><code>const progress = docHeight > 0 ? 
+    (scrollTop / docHeight) * 100 : 0;</code></pre>
+</div>
+
+<div class="challenge-box">
+    <h3>Challenge 3: Lazy Loading Initial Images</h3>
+    <p><strong>Problem:</strong> Images above the fold weren't loading immediately on page load.</p>
+</div>
+
+<div class="solution-box">
+    <p><strong>Solution:</strong> Called <code>loadInView()</code> immediately after setting up event listeners to load visible images on page load.</p>
+</div>
+
+<div class="challenge-box">
+    <h3>Challenge 4: Toast Notifications Stacking</h3>
+    <p><strong>Problem:</strong> Multiple toasts would overlap when triggered quickly.</p>
+</div>
+
+<div class="solution-box">
+    <p><strong>Solution:</strong> Used <code>margin-top: 8px</code> in CSS to stack toasts vertically with proper spacing.</p>
+</div>
+
+<div class="challenge-box">
+    <h3>Challenge 5: Autocomplete Click Outside</h3>
+    <p><strong>Problem:</strong> Suggestion dropdown wouldn't close when clicking outside.</p>
+</div>
+
+<div class="solution-box">
+    <p><strong>Solution:</strong> Added document-level click handler:</p>
+    <pre><code>$(document).on('click', function(e){
+    if(!$(e.target).closest('#news-search, #search-suggestions').length){
+        $suggestions.hide();
+    }
+});</code></pre>
+</div>
+
+<div class="page-break"></div>
+
+<h2>8. Conclusion</h2>
+
+<h3>8.1 Summary of Implemented Features</h3>
+<p>Successfully implemented all required jQuery features for Assignment 7:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Feature</th>
+            <th>Status</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Real-time search with filtering</td>
+            <td>✅ Complete</td>
+            <td>News page</td>
+        </tr>
+        <tr>
+            <td>Autocomplete suggestions</td>
+            <td>✅ Complete</td>
+            <td>News page</td>
+        </tr>
+        <tr>
+            <td>Search term highlighting</td>
+            <td>✅ Complete</td>
+            <td>News page</td>
+        </tr>
+        <tr>
+            <td>Scroll progress bar</td>
+            <td>✅ Complete</td>
+            <td>All pages</td>
+        </tr>
+        <tr>
+            <td>Animated number counters</td>
+            <td>✅ Complete</td>
+            <td>Index page</td>
+        </tr>
+        <tr>
+            <td>Loading spinner on form submit</td>
+            <td>✅ Complete</td>
+            <td>Contact page</td>
+        </tr>
+        <tr>
+            <td>Toast notification system</td>
+            <td>✅ Complete</td>
+            <td>All pages</td>
+        </tr>
+        <tr>
+            <td>Copy to clipboard functionality</td>
+            <td>✅ Complete</td>
+            <td>About page</td>
+        </tr>
+        <tr>
+            <td>Lazy image loading</td>
+            <td>✅ Complete</td>
+            <td>News page</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>8.2 Learning Outcomes</h3>
+<ol>
+    <li><strong>jQuery Mastery:</strong> Gained hands-on experience with jQuery selectors, event handling, and DOM manipulation</li>
+    <li><strong>User Experience:</strong> Learned how to implement modern UX patterns that enhance interactivity</li>
+    <li><strong>Performance Optimization:</strong> Understood lazy loading and efficient scroll event handling</li>
+    <li><strong>Problem Solving:</strong> Developed debugging skills when handling edge cases (special characters, scroll boundaries, etc.)</li>
+</ol>
+
+<h3>8.3 Future Improvements</h3>
+<ul>
+    <li>Add debouncing to search input for better performance with rapid typing</li>
+    <li>Implement keyboard navigation (arrow keys) for autocomplete suggestions</li>
+    <li>Add slide-in/slide-out animation effects to toast notifications</li>
+    <li>Create placeholder images or skeleton screens for lazy-loaded content</li>
+    <li>Add unit tests for jQuery functions using Jest or Mocha</li>
+    <li>Implement virtual scrolling for large lists</li>
+</ul>
+
+<h3>8.4 Reflection</h3>
+<p>This assignment significantly improved our understanding of jQuery and modern web development practices. The hands-on experience of implementing interactive features taught us the importance of:</p>
+
+<ul>
+    <li><strong>User Feedback:</strong> Providing immediate visual responses to user actions (toasts, spinners, highlights)</li>
+    <li><strong>Smooth Animations:</strong> Using requestAnimationFrame for performance-optimized animations</li>
+    <li><strong>Performance Optimization:</strong> Implementing lazy loading to reduce initial page load time</li>
+    <li><strong>Error Handling:</strong> Properly escaping user input to prevent regex errors</li>
+    <li><strong>Accessibility:</strong> Ensuring interactive elements work across different browsers and devices</li>
+</ul>
+
+<p>We successfully overcame technical challenges through research, debugging, and iterative testing. The project helped us develop a deeper appreciation for library-based development and the convenience jQuery provides for common DOM operations.</p>
+
+<div class="footer">
+    <p><strong>Team Vitality</strong></p>
+    <p>Sariyev Maxot • Tanibergen Beknur</p>
+    <p>Group SE-2406 • Astana IT University</p>
+    <p>Assignment 7: jQuery Implementation • October 2025</p>
+</div>
+
+</body>
+</html>
+

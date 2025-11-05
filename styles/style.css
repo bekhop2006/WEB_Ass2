@@ -868,6 +868,24 @@ html { font-size: 16px; }
     border-color: #198754 !important;
 }
 
+.dark-theme .form-select {
+    background-color: #2a2a2a !important;
+    color: #f5f5f5 !important;
+    border-color: #404040 !important;
+}
+
+.dark-theme .form-select:focus {
+    background-color: #2a2a2a !important;
+    color: #f5f5f5 !important;
+    border-color: #0d6efd !important;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25) !important;
+}
+
+.dark-theme .form-select option {
+    background-color: #2a2a2a !important;
+    color: #f5f5f5 !important;
+}
+
 .dark-theme .form-control {
     background-color: #2a2a2a !important;
     color: #f5f5f5 !important;
@@ -894,6 +912,13 @@ html { font-size: 16px; }
 .dark-theme code {
     color: #f5f5f5 !important;
     background-color: #1e1e1e !important;
+}
+
+/* Card header/body tweaks for dark theme forms and widgets */
+.dark-theme .card-header {
+    background-color: #252525 !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid #404040 !important;
 }
 
 /* Scroll Progress Bar */

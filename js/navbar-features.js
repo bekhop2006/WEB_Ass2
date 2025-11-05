@@ -2,17 +2,25 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Night Mode Toggle
+    // Night Mode Toggle with localStorage persistence
     const themeToggleBtn = document.getElementById('theme-toggle-navbar');
+    
+    // Get current theme state
+    let isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+    // Apply saved theme immediately
+    if (isDarkMode) {
+        document.body.classList.add('dark-theme');
+    } else {
+        document.body.classList.remove('dark-theme');
+    }
+    
     if (themeToggleBtn) {
-        let isDarkMode = localStorage.getItem('darkMode') === 'true';
-        
-        // Apply saved theme
+        // Update button text based on current theme
         if (isDarkMode) {
-            document.body.classList.add('dark-theme');
             themeToggleBtn.innerHTML = '☀️ Day Mode';
-            themeToggleBtn.classList.remove('btn-link');
-            themeToggleBtn.classList.add('btn-link');
+        } else {
+            themeToggleBtn.innerHTML = '🌙 Night Mode';
         }
         
         themeToggleBtn.addEventListener('click', function() {

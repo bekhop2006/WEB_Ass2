@@ -8,6 +8,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/about.css">
+    <!-- Apply dark theme immediately to prevent flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('darkMode');
+            if (savedTheme === 'true') {
+                document.body.classList.add('dark-theme');
+            } else {
+                document.body.classList.remove('dark-theme');
+            }
+        })();
+    </script>
 </head>
 <body>
     <div id="scroll-progress"><div class="bar"></div></div>
@@ -25,7 +36,7 @@
                         <li class="nav-item"><a class="nav-link active" href="about.html" data-i18n="nav_about">About Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav_language">
                                 🌐 Language
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="languageDropdown">
@@ -87,7 +98,7 @@
         </section>
 
         <section class="about-section">
-            <h2>Frequently Asked Questions</h2>
+            <h2 data-i18n="faq_title">Frequently Asked Questions</h2>
             <div class="accordion">
                 <div class="accordion-item">
                     <div class="accordion-header">
@@ -141,8 +152,11 @@
             <h2 data-i18n="copy_title">Copy to Clipboard Demo</h2>
             <div class="card">
                 <div class="card-body">
-                    <pre class="mb-2"><code id="snippet-text">npm install jquery</code></pre>
-                    <button id="copy-snippet" class="btn btn-outline-primary" data-copy-target="#snippet-text" data-i18n="copy_button">Copy</button>
+                    <p class="mb-2" data-i18n="copy_address_label">Our Email Address:</p>
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <pre class="mb-0 flex-grow-1"><code id="snippet-text" class="text-break">maxotbeknur@gmail.com</code></pre>
+                        <button id="copy-snippet" class="btn btn-outline-primary" data-copy-target="#snippet-text" data-i18n="copy_button">Copy Email</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -151,7 +165,19 @@
 
     <footer class="mt-5">
         <div id="current-datetime" class="text-center mb-2"></div>
-        
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-md-12 text-center">
+                    <nav class="footer-nav">
+                        <a href="../index.html" class="footer-link" data-i18n="footer_home">Home</a> |
+                        <a href="news.html" class="footer-link" data-i18n="nav_news">News</a> |
+                        <a href="categories.html" class="footer-link" data-i18n="nav_categories">Categories</a> |
+                        <a href="about.html" class="footer-link" data-i18n="nav_about">About Us</a> |
+                        <a href="contact.html" class="footer-link" data-i18n="nav_contact">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
         <p>&copy; 2025 News Website. <span data-i18n="footer_rights">All rights reserved.</span></p>
         <p data-i18n="footer_team">Team: Vitality | Members: Sariyev Maxot, Tanibergen Beknur | Group: SE-2406</p>
     </footer>

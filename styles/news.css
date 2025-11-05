@@ -122,9 +122,11 @@
 }
 
 .dark-theme .news-article-item {
-    background-color: #2d2d2d !important;
+    background-color: #2a2a2a !important;
     color: #ffffff !important;
-    border-left-color: #0d6efd !important;
+    border-left: 5px solid #0d6efd !important;
+    border: 1px solid #404040 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
 }
 
 .dark-theme .news-article-item h2 {
@@ -132,7 +134,7 @@
 }
 
 .dark-theme .news-meta {
-    color: #adb5bd !important;
+    color: #ced4da !important; /* Improved contrast for WCAG AA */
 }
 
 .dark-theme .news-article-item p {
@@ -161,7 +163,12 @@
 }
 
 .dark-theme .image-gallery-section {
-    background-color: #2d2d2d !important;
+    background-color: #2a2a2a !important;
+    border: 1px solid #404040 !important;
+}
+
+.dark-theme #gallery-caption {
+    color: #b0b0b0 !important;
 }
 
 .dark-theme .image-gallery-section h2 {

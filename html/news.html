@@ -8,6 +8,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/news.css">
+    <!-- Apply dark theme immediately to prevent flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('darkMode');
+            if (savedTheme === 'true') {
+                document.body.classList.add('dark-theme');
+            } else {
+                document.body.classList.remove('dark-theme');
+            }
+        })();
+    </script>
 </head>
 <body>
     <div id="scroll-progress"><div class="bar"></div></div>
@@ -25,7 +36,7 @@
                         <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav_about">About Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav_language">
                                 🌐 Language
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="languageDropdown">
@@ -71,7 +82,7 @@
                     <p>The ticket sales system, which was supposed to handle the massive demand, experienced technical difficulties from the very beginning. Many users reported being unable to access the website, while others complained about the confusing interface and long waiting times. Social media was flooded with memes and complaints about the system's performance.</p>
                     <p>Despite the technical issues, thousands of tickets were sold within the first hour. The match, scheduled for October 15th at the Almaty Central Stadium, is expected to be one of the most attended football events in Kazakhstan's history.</p>
                 </div>
-                <button class="btn btn-primary read-more-btn" data-target="article1">Read More</button>
+                <button class="btn btn-primary read-more-btn" data-target="article1" data-i18n="read_more">Read More</button>
             </article>
 
             <article class="news-article-item">
@@ -83,7 +94,7 @@
                     <p>Bakytzhan Malybayev was born on July 23, 1969, in the village of Kyzyltas, Korday District, Zhambyl Region. He began his service in the internal affairs bodies in 1990. Throughout his career, he held various positions in law enforcement and was known for his dedication to public safety.</p>
                     <p>The resignation comes as part of a broader restructuring within the Ministry of Internal Affairs. A new head of the Zhambyl Region Police Department is expected to be appointed within the next few weeks. The ministry has assured the public that all ongoing investigations and operations will continue without interruption.</p>
                 </div>
-                <button class="btn btn-primary read-more-btn" data-target="article2">Read More</button>
+                <button class="btn btn-primary read-more-btn" data-target="article2" data-i18n="read_more">Read More</button>
             </article>
             <article class="news-article-item">
                 <h2>Higgsfield: AI Model for Video Generation Raises $16M</h2>
@@ -94,13 +105,13 @@
                     <p>The investment round was led by prominent venture capital firms including Sequoia Capital and Andreessen Horowitz. The funding will be used to accelerate product development and expand the team of AI researchers and engineers.</p>
                     <p>Higgsfield's technology represents a significant breakthrough in video generation, allowing users to create high-quality videos from simple text descriptions. The company plans to launch its public beta version in the coming months, with a full commercial release expected by the end of the year.</p>
                 </div>
-                <button class="btn btn-primary read-more-btn" data-target="article3">Read More</button>
+                <button class="btn btn-primary read-more-btn" data-target="article3" data-i18n="read_more">Read More</button>
             </article>
         </section>
         
         <!-- Image Gallery Section -->
         <section class="image-gallery-section mt-5">
-            <h2 class="text-center mb-4">Photo Gallery</h2>
+            <h2 class="text-center mb-4" data-i18n="photo_gallery">Photo Gallery</h2>
             <div class="row g-3">
                 <div class="col-md-3 col-sm-6">
                     <img loading="lazy" class="img-fluid gallery-thumbnail lazy" data-src="../images/p1.svg" src="../images/p1.svg" alt="Gallery Image 1" data-full="../images/p1.svg">
@@ -131,7 +142,7 @@
             <!-- Large Image Display -->
             <div class="text-center mt-4">
                 <img id="gallery-display" src="../images/p1.svg" class="img-fluid gallery-display" alt="Selected Image">
-                <p id="gallery-caption" class="mt-2 text-muted">Click on any thumbnail to view the full image</p>
+                <p id="gallery-caption" class="mt-2 text-muted" data-i18n="gallery_caption">Click on any thumbnail to view the full image</p>
             </div>
         </section>
         
@@ -167,9 +178,21 @@
 
     <footer class="mt-5">
         <div id="current-datetime" class="text-center mb-2"></div>
-        
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-md-12 text-center">
+                    <nav class="footer-nav">
+                        <a href="../index.html" class="footer-link" data-i18n="footer_home">Home</a> |
+                        <a href="news.html" class="footer-link" data-i18n="nav_news">News</a> |
+                        <a href="categories.html" class="footer-link" data-i18n="nav_categories">Categories</a> |
+                        <a href="about.html" class="footer-link" data-i18n="nav_about">About Us</a> |
+                        <a href="contact.html" class="footer-link" data-i18n="nav_contact">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
         <p>&copy; 2025 News Website. <span data-i18n="footer_rights">All rights reserved.</span></p>
-        <p data-i18n="footer_team">Team:Vitality | Members: Sariyev Maxot, Tanibergen Beknur | Group:SE-2406</p>
+        <p data-i18n="footer_team">Team: Vitality | Members: Sariyev Maxot, Tanibergen Beknur | Group: SE-2406</p>
     </footer>
     <div id="toast-container"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

@@ -92,9 +92,10 @@
 
 /* Dark Theme Styles for Contact Page */
 .dark-theme .contact-info {
-    background-color: #2d2d2d !important;
+    background-color: #2a2a2a !important;
     color: #ffffff !important;
-    box-shadow: 0 4px 8px rgba(255,255,255,0.1) !important;
+    border: 1px solid #404040 !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
 }
 
 .dark-theme .contact-info h2 {
@@ -102,7 +103,7 @@
 }
 
 .dark-theme .contact-info p {
-    color: #e9ecef !important;
+    color: #d1d5db !important; /* Improved contrast */
 }
 
 .dark-theme .contact-info p strong {
@@ -110,9 +111,18 @@
 }
 
 .dark-theme .contact-form-section {
-    background-color: #2d2d2d !important;
+    background-color: #2a2a2a !important;
     color: #ffffff !important;
-    box-shadow: 0 4px 8px rgba(255,255,255,0.1) !important;
+    border: 1px solid #404040 !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-theme .card-body.text-center h3 {
+    color: #ffffff !important;
+}
+
+.dark-theme #rating-feedback {
+    color: #b0b0b0 !important;
 }
 
 .dark-theme .contact-form-section h2 {
@@ -148,7 +158,7 @@
 }
 
 .dark-theme .character-counter {
-    color: #adb5bd !important;
+    color: #ced4da !important; /* Improved contrast for WCAG AA */
 }
 
 .dark-theme .character-counter.text-warning {

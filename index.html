@@ -5,22 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="styles/style.css">
-    <!-- Apply dark theme immediately to prevent flash -->
-    <script>
-        (function() {
-            const savedTheme = localStorage.getItem('darkMode');
-            if (savedTheme === 'true') {
-                document.body.classList.add('dark-theme');
-            } else {
-                document.body.classList.remove('dark-theme');
-            }
-        })();
-    </script>
 </head>
 <body>
-    <div id="scroll-progress"><div class="bar"></div></div>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg">
             <div class="container">
@@ -30,12 +17,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="mainNavbar">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="html/news.html" data-i18n="nav_news">News</a></li>
-                        <li class="nav-item"><a class="nav-link" href="html/categories.html" data-i18n="nav_categories">Categories</a></li>
-                        <li class="nav-item"><a class="nav-link" href="html/about.html" data-i18n="nav_about">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="html/contact.html" data-i18n="nav_contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="html/news.html">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="html/categories.html">Categories</a></li>
+                        <li class="nav-item"><a class="nav-link" href="html/about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="html/contact.html">Contact</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav_language">
+                            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 🌐 Language
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="languageDropdown">
@@ -55,9 +42,9 @@
 
     <main id="main-content" class="container">
         <section class="hero mb-4 text-center">
-            <h1 class="mb-3" data-i18n="hero_title">Welcome to Our News Website!</h1>
-            <p class="mb-4" data-i18n="hero_sub">Stay informed with the latest events.</p>
-            <a href="html/news.html" class="btn btn-light btn-lg" data-i18n="hero_read">Read News</a>
+            <h1 class="mb-3">Welcome to Our News Website!</h1>
+            <p class="mb-4">Stay informed with the latest events.</p>
+            <a href="html/news.html" class="btn btn-light btn-lg">Read News</a>
         </section>
 
         <section class="mb-5">
@@ -113,77 +100,30 @@
             </div>
         </section>
 
-        <section class="mb-5">
-            <div class="row g-4">
-                <div class="col-sm-6 col-lg-4 d-flex">
-                    <article class="card w-100">
-                        <img src="images/photo_523404.png.webp" alt="Kairat vs Real">
-                        <div class="card-body">
-                            <h3>Matchday Spotlight</h3>
-                            <p>Ticket demand surges ahead of the big game this week.</p>
-                        </div>
-                        <a class="btn btn-primary ms-3 mb-3" href="html/news.html">Explore</a>
-                    </article>
-                </div>
-                <div class="col-sm-6 col-lg-4 d-flex">
-                    <article class="card w-100">
-                        <img src="images/photo_523360.jpg.webp" alt="Police Department">
-                        <div class="card-body">
-                            <h3>Local Headlines</h3>
-                            <p>Leadership changes and what they mean for the city.</p>
-                        </div>
-                        <a class="btn btn-primary ms-3 mb-3" href="html/news.html">Explore</a>
-                    </article>
-                </div>
-                <div class="col-sm-6 col-lg-4 d-flex">
-                    <article class="card w-100">
-                        <img src="images/images.png" alt="AI Video Generation">
-                        <div class="card-body">
-                            <h3>Tech & AI</h3>
-                            <p>Startups push boundaries with next‑gen video models.</p>
-                        </div>
-                        <a class="btn btn-primary ms-3 mb-3" href="html/news.html">Explore</a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
+        <!-- Interactive Features Section -->
+        
     </main>
 
     <footer class="mt-5">
-        <div id="current-datetime" class="text-center mb-2"></div>
-        <div class="container">
-            <div class="row mb-3">
-                <div class="col-md-12 text-center">
-                    <nav class="footer-nav">
-                        <a href="index.html" class="footer-link" data-i18n="footer_home">Home</a> |
-                        <a href="html/news.html" class="footer-link" data-i18n="nav_news">News</a> |
-                        <a href="html/categories.html" class="footer-link" data-i18n="nav_categories">Categories</a> |
-                        <a href="html/about.html" class="footer-link" data-i18n="nav_about">About Us</a> |
-                        <a href="html/contact.html" class="footer-link" data-i18n="nav_contact">Contact</a>
-                    </nav>
-                </div>
-            </div>
         </div>
-        <p>&copy; 2025 News Website. <span data-i18n="footer_rights">All rights reserved.</span></p>
-        <p data-i18n="footer_team">Team: Vitality | Members: Sariyev Maxot, Tanibergen Beknur | Group: SE-2406</p>
+        <p>&copy; 2025 News Website. All rights reserved.</p>
+        <p>Team: Vitality | Members: Sariyev Maxot, Tanibergen Beknur | Group: SE-2406</p>
     </footer>
 
     <!-- Popup Subscription Form -->
     <div id="subscription-popup" class="popup-overlay">
         <div class="popup-content">
             <button id="close-popup" class="close-btn">&times;</button>
-            <h3 data-i18n="subscribe_title">Subscribe to Our Newsletter</h3>
+            <h3>Subscribe to Our Newsletter</h3>
             <form id="popup-form">
                 <div class="mb-3">
-                    <label for="popup-email" class="form-label" data-i18n="subscribe_email">Email Address</label>
+                    <label for="popup-email" class="form-label">Email Address</label>
                     <input type="email" id="popup-email" class="form-control" required>
                 </div>
-                <button type="submit" class="btn btn-primary" data-i18n="subscribe_submit">Subscribe</button>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
             </form>
         </div>
     </div>
-    <div id="toast-container"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="js/popup.js"></script>
     <script src="js/background-changer.js"></script>
@@ -192,7 +132,5 @@
     <script src="js/advanced-features.js"></script>
     <script src="js/news-manager.js"></script>
     <script src="js/animations.js"></script>
-    <script src="js/i18n.js"></script>
-    <script src="js/jquery-features.js"></script>
 </body>
 </html>

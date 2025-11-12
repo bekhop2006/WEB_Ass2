@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const datetimeElement = document.getElementById('current-datetime');
     
     function updateDateTime() {
+        const dtElem = document.getElementById('datetime');
+        if (!dtElem) return; // Проверка на существование элемента
         const now = new Date();
         const options = {
             year: 'numeric',

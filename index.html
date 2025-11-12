@@ -6,6 +6,8 @@
     <title>News</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/i18n.js"></script>
 </head>
 <body>
     <header>
@@ -17,10 +19,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="mainNavbar">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="html/news.html">News</a></li>
-                        <li class="nav-item"><a class="nav-link" href="html/categories.html">Categories</a></li>
-                        <li class="nav-item"><a class="nav-link" href="html/about.html">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="html/contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="html/news.html" data-i18n="nav_news">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="html/categories.html" data-i18n="nav_categories">Categories</a></li>
+                        <li class="nav-item"><a class="nav-link" href="html/about.html" data-i18n="nav_about">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="html/contact.html" data-i18n="nav_contact">Contact</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 🌐 Language
@@ -40,11 +42,13 @@
         </nav>
     </header>
 
+    <div id="language-greeting" class="text-center mt-3 mb-3" style="font-size:1.2em; font-weight:500;" data-i18n="hero_title">Welcome to our news website!</div>
+
     <main id="main-content" class="container">
         <section class="hero mb-4 text-center">
-            <h1 class="mb-3">Welcome to Our News Website!</h1>
-            <p class="mb-4">Stay informed with the latest events.</p>
-            <a href="html/news.html" class="btn btn-light btn-lg">Read News</a>
+            <h1 class="mb-3" data-i18n="hero_title">Welcome to Our News Website!</h1>
+            <p class="mb-4" data-i18n="hero_sub">Stay informed with the latest events.</p>
+            <a href="html/news.html" class="btn btn-light btn-lg" data-i18n="hero_read">Read News</a>
         </section>
 
         <section class="mb-5">
@@ -62,31 +66,31 @@
                 </div>
                 <div class="carousel-inner rounded-4 shadow">
                     <div class="carousel-item active">
-                        <img src="images/p1.svg" class="d-block w-100" alt="Slide 1">
+                        <img src="/images/photo_main_/111.webp" class="d-block w-100" alt="Slide 1">
                     </div>
                     <div class="carousel-item">
-                        <img src="images/p2.svg" class="d-block w-100" alt="Slide 2">
+                        <img src="/images/photo_main_//photo_349566.jpeg.webp" class="d-block w-100" alt="Slide 2">
                     </div>
                     <div class="carousel-item">
-                        <img src="images/p3.svg" class="d-block w-100" alt="Slide 3">
+                        <img src="/images/photo_main_/photo_349523.jpeg.webp" class="d-block w-100" alt="Slide 3">
                     </div>
                     <div class="carousel-item">
-                        <img src="images/p4.svg" class="d-block w-100" alt="Slide 4">
+                        <img src="/images//photo_main_/2.webp" class="d-block w-100" alt="Slide 4">
                     </div>
                     <div class="carousel-item">
-                        <img src="images/p5.svg" class="d-block w-100" alt="Slide 5">
+                        <img src="/images/photo_main_/3.webp" class="d-block w-100" alt="Slide 5">
                     </div>
                     <div class="carousel-item">
-                        <img src="images/p6.svg" class="d-block w-100" alt="Slide 6">
+                        <img src="/images/photo_main_/4.webp" class="d-block w-100" alt="Slide 6">
                     </div>
                     <div class="carousel-item">
-                        <img src="images/p7.svg" class="d-block w-100" alt="Slide 7">
+                        <img src="/images/photo_main_/5.webp" class="d-block w-100" alt="Slide 7">
                     </div>
                     <div class="carousel-item">
-                        <img src="images/p8.svg" class="d-block w-100" alt="Slide 8">
+                        <img src="/images/photo_main_/6.webp" class="d-block w-100" alt="Slide 8">
                     </div>
                     <div class="carousel-item">
-                        <img src="images/p9.svg" class="d-block w-100" alt="Slide 9">
+                        <img src="/images/photo_main_/7.webp" class="d-block w-100" alt="Slide 9">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#homepageCarousel" data-bs-slide="prev">
@@ -100,27 +104,58 @@
             </div>
         </section>
 
+        <!-- Карточки новостей на главной -->
+        <section class="card-row mb-5">
+            <div class="card">
+                <img src="images/photo_523404.png.webp" alt="Kairat vs Real" data-i18n-placeholder="card_img1_alt">
+                <div class="card-body">
+                    <h3 data-i18n="card1_title">Matchday Spotlight</h3>
+                    <p data-i18n="card1_desc">Ticket demand surges ahead of the big game this week.</p>
+                </div>
+                <a class="btn btn-primary ms-3 mb-3" href="html/news.html" data-i18n="card1_btn">Explore</a>
+            </div>
+            <div class="card">
+                <img src="images/photo_523360.jpg.webp" alt="Police Department" data-i18n-placeholder="card_img2_alt">
+                <div class="card-body">
+                    <h3 data-i18n="card2_title">Local Headlines</h3>
+                    <p data-i18n="card2_desc">Leadership changes and what they mean for the city.</p>
+                </div>
+                <a class="btn btn-primary ms-3 mb-3" href="html/news.html" data-i18n="card2_btn">Explore</a>
+            </div>
+            <div class="card">
+                <img src="images/images.png" alt="AI Video Generation" data-i18n-placeholder="card_img3_alt">
+                <div class="card-body">
+                    <h3 data-i18n="card3_title">Tech & AI</h3>
+                    <p data-i18n="card3_desc">Startups push boundaries with next‑gen video models.</p>
+                </div>
+                <a class="btn btn-primary ms-3 mb-3" href="html/news.html" data-i18n="card3_btn">Explore</a>
+            </div>
+        </section>
+
+        <!-- Tabs for news -->
+   
+
         <!-- Interactive Features Section -->
         
     </main>
 
     <footer class="mt-5">
         </div>
-        <p>&copy; 2025 News Website. All rights reserved.</p>
-        <p>Team: Vitality | Members: Sariyev Maxot, Tanibergen Beknur | Group: SE-2406</p>
+        <p>&copy; 2025 News Website. <span data-i18n="footer_rights">All rights reserved.</span></p>
+        <p data-i18n="footer_team">Team: Vitality | Members: Sariyev Maxot, Tanibergen Beknur | Group: SE-2406</p>
     </footer>
 
     <!-- Popup Subscription Form -->
     <div id="subscription-popup" class="popup-overlay">
         <div class="popup-content">
             <button id="close-popup" class="close-btn">&times;</button>
-            <h3>Subscribe to Our Newsletter</h3>
+            <h3 data-i18n="subscribe_title">Subscribe to Our Newsletter</h3>
             <form id="popup-form">
                 <div class="mb-3">
-                    <label for="popup-email" class="form-label">Email Address</label>
-                    <input type="email" id="popup-email" class="form-control" required>
+                    <label for="popup-email" class="form-label" data-i18n="subscribe_email">Email Address</label>
+                    <input type="email" id="popup-email" class="form-control" required data-i18n-placeholder="subscribe_email">
                 </div>
-                <button type="submit" class="btn btn-primary">Subscribe</button>
+                <button type="submit" class="btn btn-primary" data-i18n="subscribe_submit">Subscribe</button>
             </form>
         </div>
     </div>
@@ -132,5 +167,7 @@
     <script src="js/advanced-features.js"></script>
     <script src="js/news-manager.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/jquery-features.js"></script>
 </body>
 </html>

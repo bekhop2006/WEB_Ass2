@@ -44,7 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        document.getElementById('star-rating').addEventListener('mouseleave', function() {
+        const starContainer = document.getElementById('star-rating');
+        if (!starContainer) return; // Проверка на существование элемента
+        starContainer.addEventListener('mouseleave', function() {
             const currentRating = this.dataset.currentRating || 0;
             highlightStars(parseInt(currentRating));
         });

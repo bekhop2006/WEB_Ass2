@@ -53,7 +53,19 @@
             rate_website: 'Rate Our Website',
             rate_feedback: 'We value your feedback! Please rate your experience.',
             faq_title: 'Frequently Asked Questions',
-            categories_details: 'News Categories Details'
+            categories_details: 'News Categories Details',
+            card_img1_alt: 'Kairat vs Real',
+            card1_title: 'Matchday Spotlight',
+            card1_desc: 'Ticket demand surges ahead of the big game this week.',
+            card1_btn: 'Explore',
+            card_img2_alt: 'Police Department',
+            card2_title: 'Local Headlines',
+            card2_desc: 'Leadership changes and what they mean for the city.',
+            card2_btn: 'Explore',
+            card_img3_alt: 'AI Video Generation',
+            card3_title: 'Tech & AI',
+            card3_desc: 'Startups push boundaries with next‑gen video models.',
+            card3_btn: 'Explore'
         },
         ru: {
             nav_news: 'Новости',
@@ -69,7 +81,7 @@
             clear_search: 'Очистить',
             latest_news: 'Последние новости',
             footer_rights: 'Все права защищены.',
-            footer_team: 'Команда: Vitality | Участники: Сариев Махсат, Таниберген Бекнур | Группа: SE-2406',
+            footer_team: 'Команда: Vitality | Участники: Сариев Максот, Таниберген Бекнур | Группа: SE-2406',
             stats_users: 'Пользователи',
             stats_articles: 'Статьи',
             stats_categories: 'Категории',
@@ -107,7 +119,19 @@
             rate_website: 'Оцените наш сайт',
             rate_feedback: 'Мы ценим ваше мнение! Пожалуйста, оцените свой опыт.',
             faq_title: 'Часто задаваемые вопросы',
-            categories_details: 'Детали категорий новостей'
+            categories_details: 'Детали категорий новостей',
+            card_img1_alt: 'Кайрат против Реала',
+            card1_title: 'Матч дня',
+            card1_desc: 'Спрос на билеты растет перед большой игрой на этой неделе.',
+            card1_btn: 'Подробнее',
+            card_img2_alt: 'Полицейский департамент',
+            card2_title: 'Местные заголовки',
+            card2_desc: 'Изменения в руководстве и их значение для города.',
+            card2_btn: 'Подробнее',
+            card_img3_alt: 'Генерация видео с ИИ',
+            card3_title: 'Технологии и ИИ',
+            card3_desc: 'Стартапы расширяют границы с новыми моделями видео.',
+            card3_btn: 'Подробнее'
         },
         kz: {
             nav_news: 'Жаңалықтар',
@@ -123,7 +147,7 @@
             clear_search: 'Тазарту',
             latest_news: 'Соңғы жаңалықтар',
             footer_rights: 'Барлық құқықтар қорғалған.',
-            footer_team: 'Топ: Vitality | Қатысушылар: Сariyev Махсат, Таниберген Бекнұр | Топ: SE-2406',
+            footer_team: 'Топ: Vitality | Қатысушылар: Сариев Максот, Тәніберген Бекнұр | Топ: SE-2406',
             stats_users: 'Пайдаланушылар',
             stats_articles: 'Мақалалар',
             stats_categories: 'Санаттар',
@@ -161,7 +185,19 @@
             rate_website: 'Сайтымызды бағалаңыз',
             rate_feedback: 'Біз сіздің пікіріңізді бағалаймыз! Тәжірибеңізді бағалаңыз.',
             faq_title: 'Жиі қойылатын сұрақтар',
-            categories_details: 'Жаңалықтар санаттарының детальдары'
+            categories_details: 'Жаңалықтар санаттарының детальдары',
+            card_img1_alt: 'Қайрат пен Реал',
+            card1_title: 'Матч күні',
+            card1_desc: 'Осы аптадағы үлкен ойын алдында билеттерге сұраныс артып келеді.',
+            card1_btn: 'Толығырақ',
+            card_img2_alt: 'Полиция департаменті',
+            card2_title: 'Жергілікті жаңалықтар',
+            card2_desc: 'Көшбасшылықтағы өзгерістер және олардың қала үшін маңызы.',
+            card2_btn: 'Толығырақ',
+            card_img3_alt: 'ЖИ бейне генерациясы',
+            card3_title: 'Технологиялар және ЖИ',
+            card3_desc: 'Стартаптар жаңа буын бейне үлгілерімен шекараларды кеңейтуде.',
+            card3_btn: 'Толығырақ'
         }
     };
 

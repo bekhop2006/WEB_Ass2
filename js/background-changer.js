@@ -18,4 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.backgroundColor = colors[currentColorIndex];
         changeColorBtn.textContent = `Change Color (${currentColorIndex + 1}/${colors.length})`;
     });
+
+    const btn = document.getElementById('background-btn');
+    if (btn) {
+        btn.addEventListener('click', function() {
+            document.body.classList.toggle('dark-bg');
+        });
+    }
 });

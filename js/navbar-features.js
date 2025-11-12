@@ -47,6 +47,12 @@ document.addEventListener('DOMContentLoaded', function() {
             kz: "Біздің жаңалықтар сайтына қош келдіңіз!"
         };
         
+        const languageNames = {
+            en: 'English',
+            ru: 'Русский',
+            kz: 'Қазақша'
+        };
+        
         languageButtons.forEach(btn => {
             btn.addEventListener('click', function() {
                 const selectedLang = this.dataset.lang;
@@ -82,8 +88,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Update page elements (if needed)
                 console.log(`Language changed to: ${selectedLang}`);
+                
+                // Show current language
+                let langLabel = document.getElementById('current-language-label');
+                if (!langLabel) {
+                    langLabel = document.createElement('div');
+                    langLabel.id = 'current-language-label';
+                    langLabel.style.textAlign = 'center';
+                    langLabel.style.fontWeight = 'bold';
+                    langLabel.style.margin = '10px 0';
+                    document.body.insertBefore(langLabel, document.getElementById('main-content'));
+                }
+                langLabel.textContent = 'Current language: ' + languageNames[selectedLang];
             });
         });
+        
+        // Show current language on load
+        const savedLang = localStorage.getItem('language') || 'en';
+        let langLabel = document.getElementById('current-language-label');
+        if (!langLabel) {
+            langLabel = document.createElement('div');
+            langLabel.id = 'current-language-label';
+            langLabel.style.textAlign = 'center';
+            langLabel.style.fontWeight = 'bold';
+            langLabel.style.margin = '10px 0';
+            document.body.insertBefore(langLabel, document.getElementById('main-content'));
+        }
+        langLabel.textContent = 'Current language: ' + languageNames[savedLang];
     }
     
     // Background Color Changer in Footer

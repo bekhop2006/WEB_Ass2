@@ -711,7 +711,7 @@ html { font-size: 16px; }
 /* Buttons */
 .dark-theme .btn,
 .dark-theme .btn-light {
-    background-color: #2a2a2a !important;
+    background-color: #121212 !important;
     color: #f5f5f5 !important;
     border-color: #3a3a3a !important;
 }
@@ -783,12 +783,12 @@ html { font-size: 16px; }
 
 /* Links */
 .dark-theme a {
-    color: #7ab4ff !important;
+    color: #ffffff !important;
 }
 
 .dark-theme a:hover,
 .dark-theme a:focus {
-    color: #a6cbff !important;
+    color: #ffffff !important;
 }
 
 /* Carousel indicators contrast (Bootstrap 5) */
